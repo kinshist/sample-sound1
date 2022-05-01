@@ -1,0 +1,354 @@
+/*--------------------------------------
+  Utility Styles
+---------------------------------------*/
+
+// 行揃え
+.u-ta-left-xs {
+  text-align: left;
+}
+.u-ta-center-xs {
+  text-align: center;
+}
+.u-ta-right-xs {
+  text-align: right;
+}
+.u-va-middle-xs {
+  vertical-align: middle;
+}
+
+// 要素タイプ
+.u-d-bl-xs {
+  display: block;
+}
+.u-d-ib-xs {
+  display: inline-block;
+}
+.u-d-in-xs {
+  display: inline;
+}
+.u-d-n-xs {
+  display: none;
+}
+
+// 文字色
+// blue
+.u-color-blue-d-xs {
+  color: $color-blue-d;
+}
+.u-color-blue-m-xs {
+  color: $color-blue-m;
+}
+.u-color-blue-l-xs {
+  color: $color-blue-l;
+}
+
+// orange
+.u-color-orange-d-xs {
+  color: $color-orange-d;
+}
+.u-color-orange-m-xs {
+  color: $color-orange-m;
+}
+// .u-color-orange-l-xs { color:$color-orange-l}
+
+// green
+.u-color-green-m-xs {
+  color: $color-green-m;
+}
+.u-color-green-l-xs {
+  color: $color-green-l;
+}
+
+// yellow
+.u-color-yellow-d-xs {
+  color: $color-yellow-d;
+}
+.u-color-yellow-l-xs {
+  color: $color-yellow-l;
+}
+
+// black
+// .u-color-black-d-xs { color:$color-black-d}
+
+// red
+.u-color-red-d-xs {
+  color: $color-red-d;
+}
+
+//文字装飾
+.u-fw-b-xs {
+  font-weight: bold;
+}
+.u-fw-n-xs {
+  font-weight: normal;
+}
+.u-td-u-xs {
+  text-decoration: underline;
+}
+
+.u-ws-nw-xs {
+  white-space: nowrap;
+}
+
+//マーカー
+.u-marker-yellow-xs {
+  // background:linear-gradient(to top, $color-yellow-d 0%, $color-yellow-d 19%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 100%);
+  background-color: $color-yellow-l;
+}
+
+.u-z-2-xs {
+  z-index: 2;
+}
+
+.u-lh-18-xs {
+  line-height: 1.8;
+}
+.u-lh-24-xs {
+  line-height: 2.4;
+}
+
+.u-ls-13-xs {
+  letter-spacing: 0.13em;
+}
+
+.u-mxw-none-xs {
+  max-width: none;
+  width: 100%;
+}
+
+.u-mxw-200-xs {
+  max-width: 200px;
+}
+.u-mxw-230-xs {
+  max-width: 230px;
+}
+.u-mxw-255-xs {
+  max-width: 255px;
+}
+.u-mxw-290-xs {
+  max-width: 290px;
+}
+.u-mxw-1080-xs {
+  max-width: 1080px;
+}
+
+.js-fadeIn {
+  opacity: 0;
+  transition-duration: 0.5s;
+  transition-property: opacity, transform;
+  transform: translate(0, 30px);
+}
+.is-fadeIn {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+//文字サイズ
+// @for $i from 10 through 32 {
+//   .u-fz-#{$i}-xs {
+//     font-size: #{$i * 0.1}rem;
+//   }
+// }
+
+//パディング
+// @for $i from 0 through 20 {
+//   .u-pb-#{$i * 5}-xs {
+//     padding-bottom: #{$i * 5}px;
+//   }
+// }
+// @for $i from 0 through 20 {
+//   .u-pr-#{$i * 5}-xs {
+//     padding-right: #{$i * 5}px;
+//   }
+// }
+// @for $i from 0 through 20 {
+//   .u-pl-#{$i * 5}-xs {
+//     padding-left: #{$i * 5}px;
+//   }
+// }
+// @for $i from 0 through 30 {
+//   .u-pt-#{$i * 5}-xs {
+//     padding-top: #{$i * 5}px;
+//   }
+// }
+
+//マージン
+// .u-mr-a-xs {
+//   margin-right: auto;
+// }
+// .u-ml-a-xs {
+//   margin-left: auto;
+// }
+// .u-mt-a-xs {
+//   margin-top: auto;
+// }
+// @for $i from 0 through 20 {
+//   .u-mb-#{$i * 5}-minus-xs {
+//     margin-bottom: -#{$i * 5}px;
+//   }
+// }
+// @for $i from 0 through 20 {
+//   .u-mb-#{$i * 5}-xs {
+//     margin-bottom: #{$i * 5}px;
+//   }
+// }
+// @for $i from 0 through 20 {
+//   .u-mr-#{$i * 5}-xs {
+//     margin-right: #{$i * 5}px;
+//   }
+// }
+// @for $i from 0 through 20 {
+//   .u-ml-#{$i * 5}-xs {
+//     margin-left: #{$i * 5}px;
+//   }
+// }
+// @for $i from 0 through 20 {
+//   .u-mt-#{$i * 5}-xs {
+//     margin-top: #{$i * 5}px;
+//   }
+// }
+
+@include mq(mdMin) {
+  .u-ta-left-md {
+    text-align: left;
+  }
+  .u-ta-center-md {
+    text-align: center;
+  }
+  .u-ta-right-md {
+    text-align: right;
+  }
+
+  // .u-mxw-260-md {
+  //   max-width: 260px;
+  // }
+  // .u-mxw-285-md {
+  //   max-width: 285px;
+  // }
+  // .u-mxw-320-md {
+  //   max-width: 320px;
+  // }
+  // .u-mxw-380-md {
+  //   max-width: 380px;
+  // }
+  // .u-mxw-670-md {
+  //   max-width: 670px;
+  // }
+  // .u-mxw-960-md {
+  //   max-width: 960px;
+  // }
+  // .u-mxw-1080-md {
+  //   max-width: 1080px;
+  // }
+
+  //文字サイズ
+  // @for $i from 10 through 30 {
+  //   .u-fz-#{$i}-md {
+  //     font-size: #{$i * 0.1}rem;
+  //   }
+  // }
+
+  //パディング
+  // @for $i from 0 through 30 {
+  //   .u-pb-#{$i * 5}-md {
+  //     padding-bottom: #{$i * 5}px;
+  //   }
+  // }
+  // @for $i from 0 through 20 {
+  //   .u-pr-#{$i * 5}-md {
+  //     padding-right: #{$i * 5}px;
+  //   }
+  // }
+  // @for $i from 0 through 20 {
+  //   .u-pl-#{$i * 5}-md {
+  //     padding-left: #{$i * 5}px;
+  //   }
+  // }
+  // @for $i from 0 through 20 {
+  //   .u-pt-#{$i * 5}-md {
+  //     padding-top: #{$i * 5}px;
+  //   }
+  // }
+  // .u-pb-160-md {
+  //   padding-bottom: 160px;
+  // }
+  // .u-pb-140-md {
+  //   padding-bottom: 140px;
+  // }
+  // .u-pb-110-md {
+  //   padding-bottom: 110px;
+  // }
+
+  //マージン
+  // .u-mr-a-md {
+  //   margin-right: auto;
+  // }
+  // .u-ml-a-md {
+  //   margin-left: auto;
+  // }
+  // .u-mt-a-md {
+  //   margin-top: auto;
+  // }
+  // .u-mb-a-md {
+  //   margin-bottom: auto;
+  // }
+  // @for $i from 0 through 20 {
+  //   .u-mb-#{$i * 5}-md {
+  //     margin-bottom: #{$i * 5}px;
+  //   }
+  // }
+  // @for $i from 0 through 20 {
+  //   .u-mb-#{$i * 5}-minus-md {
+  //     margin-bottom: -#{$i * 5}px;
+  //   }
+  // }
+  // @for $i from 0 through 20 {
+  //   .u-mr-#{$i * 5}-md {
+  //     margin-right: #{$i * 5}px;
+  //   }
+  // }
+  // @for $i from 0 through 20 {
+  //   .u-ml-#{$i * 5}-md {
+  //     margin-left: #{$i * 5}px;
+  //   }
+  // }
+  // @for $i from 0 through 30 {
+  //   .u-mt-#{$i * 5}-md {
+  //     margin-top: #{$i * 5}px;
+  //   }
+  // }
+  // .u-mt-160-md {
+  //   margin-top: 160px;
+  // }
+}
+
+@include mq(xsMax) {
+  .u-hidden-u-sm {
+    display: none;
+  }
+}
+@include mq(smMax) {
+  .u-hidden-u-md {
+    display: none;
+  }
+}
+@include mq(mdMax) {
+  .u-hidden-u-lg {
+    display: none;
+  }
+}
+@include mq(smMin) {
+  .u-hidden-o-sm {
+    display: none;
+  }
+}
+@include mq(mdMin) {
+  .u-hidden-o-md {
+    display: none;
+  }
+}
+@include mq(lgMin) {
+  .u-hidden-o-lg {
+    display: none;
+  }
+}

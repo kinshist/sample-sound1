@@ -1,0 +1,5 @@
+/vendor/
+.editorconfig
+/node_modules/
+/dev/
+package-lock.json

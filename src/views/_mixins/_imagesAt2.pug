@@ -1,0 +1,13 @@
+mixin imagesAt2(name, caption, copy)
+  figure
+    picture
+      source(srcset="/noguchi/assets/images/"+name+"_lg.jpg.webp 1x, /noguchi/assets/images/"+name+"_lg@2x.jpg.webp 2x" media="(min-width: 768px)" type="image/webp")
+      source(srcset="/noguchi/assets/images/"+name+"_lg.jpg 1x, /noguchi/assets/images/"+name+"_lg@2x.jpg 2x" media="(min-width: 768px)")
+      source(srcset="/noguchi/assets/images/"+name+".jpg.webp 2x" type="image/webp")
+      img(src="/noguchi/assets/images/"+name+".jpg", alt="")
+    if(copy)
+      figcaption.-copy
+        | &copy; 
+        span=copy
+    if(caption)
+      figcaption=caption

@@ -1,0 +1,1 @@
+"use strict";!function(){var e=document.querySelector(".p-homeKeyvisual");e&&new IntersectionObserver(function(e){e.forEach(function(e){var o=document.querySelector(".l-header");e.isIntersecting?o.classList.remove("is-show"):o.classList.add("is-show")})},{root:null,rootMargin:"0px 0px -100% 0px",threshold:0}).observe(e)}();

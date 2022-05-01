@@ -1,0 +1,22 @@
+block variables
+  - var pageTitle = "";
+  - var pageDescription = "";
+  - var pageUrl = "";
+  - var pageDir = "/";
+  - var pageType = "website";
+
+include /views/_mixins/_index
+
+doctype
+html(lang="ja")
+  head
+    include /views/_components/_meta
+    include /views/_components/_styles
+    block addStyles
+
+  body
+    .l-wrapper
+      include /views/_components/_header
+      block main
+    include /views/_components/_scripts
+    block addScripts

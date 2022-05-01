@@ -1,0 +1,60 @@
+
+
+.c-btnType2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  min-height: 76px;
+  text-decoration: none;
+  background-color: #f33;
+  color: #fff;
+  border-radius: 8px;
+  span{
+    position: relative;
+  }
+  @include mq(mdMin) {
+    min-height: 57px;
+    border: #f33 1px solid;
+    overflow: hidden;
+    &:hover{
+      opacity: 1;
+      background-color: #fff;
+      color: #f33;
+    }
+  }
+}
+
+
+.c-btnType3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  min-height: 64px;
+  text-decoration: none;
+  background-color: #fff;
+  color: $color-prime;
+  border-radius: 8px;
+  border: $color-prime 1px solid;
+  padding: 0 15px;
+  span{
+    position: relative;
+  }
+  @include mq(mdMin) {
+    font-size: 1.2rem;
+    min-height: 36px;
+    overflow: hidden;
+    &:hover{
+      opacity: 1;
+      color: #000;
+      background-color: #eee;
+    }
+  }
+}

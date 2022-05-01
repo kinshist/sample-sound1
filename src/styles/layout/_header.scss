@@ -1,0 +1,220 @@
+/* Header
+---------------------------------------*/
+
+.l-header {
+  $selectorTop: &;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  &__inner {
+    padding: 15px 15px 0;
+    display: flex;
+    position: relative;
+  }
+  &__logo {
+    font-size: 0;
+    width: 142px;
+    padding-top: 5px;
+    display: flex;
+    img {
+      width: 100%;
+    }
+    &Sample{
+      margin-right: 3px;
+    }
+  }
+  &__text{
+    padding-top: 10px;
+    margin-left: 15px;
+    width: 125px;
+  }
+  &__menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #F0F0F0;
+    padding: 0 16px;
+    transition: max-height 0.3s, padding 0.3s;
+    max-height: 0;
+    overflow: hidden;
+    ul{
+      border-bottom: 1px solid #E3E3E3;
+    }
+    li{
+      border-top: 1px solid #E3E3E3;
+      a{
+        display: flex;
+        height: 63px;
+        align-items: center;
+        padding-left: 10px;
+        font-family: $font-gothicAlphabet;
+        text-decoration: none;
+        letter-spacing: 0.05rem;
+        line-height: 1.2;
+        font-weight: 500;
+        &.is-current{
+          span{
+            position: relative;
+            &::before{
+              content: "";
+              position: absolute;
+              top: 0;
+              right: -10px;
+              width: 6px;
+              height: 6px;
+              background:linear-gradient(#101A38, #209BD5);
+              border-radius: 100%;
+            }
+          }
+        }
+      }
+    }
+    .is-gNavOpen &{
+      max-height: 528px;
+      overflow: auto;
+      padding: 64px 16px;
+    }
+  }
+  &__faq{
+    margin: 40px auto 0;
+  }
+  &__entry{
+    margin-top: 25px;
+  }
+  &__btn {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #F0F0F0;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 22px;
+      width: 16px;
+      height: 2px;
+      background-color: $color-prime;
+      transition: transform 0.3s;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 25px;
+      left: 22px;
+      width: 16px;
+      height: 2px;
+      background-color: $color-prime;
+      transition: transform 0.3s;
+    }
+    .is-gNavOpen &{
+      &::before {
+        transform: rotate(45deg);
+        top: 28px;
+      }
+      &::after {
+        transform: rotate(-45deg);
+        bottom: 30px;
+      }
+    }
+  }
+  @include mq(xsMax) {
+    &__logo {
+      width: 122px;
+      padding-top: 5px;
+    }
+    &__text{
+      width: 105px;
+      margin-left: 10px;
+    }
+
+  }
+  @include mq(mdMin) {
+    height: 95px;
+    .is-top &{
+      transition: transform 0.3s;
+      transform: translateY(-95px);
+      &.is-show {
+        transform: translateY(0);
+        #{$selectorTop}__menu{
+          display: flex;
+        }
+      }
+    }
+    &__inner {
+      padding: 0 20px 0 25px;
+      justify-content: space-between;
+      align-items: center;
+      height: 95px;
+    }
+    &__logo {
+      width: 280px;
+      &Sample{
+        margin-right: 6px;
+      }
+    }
+    &__text{
+      padding-top: 10px;
+      margin-left: 20px;
+      width: 200px;
+    }
+    &__menu{
+      position: static;
+      width: auto;
+      background-color: transparent;
+      padding: 0;
+      max-height: initial;
+      display: flex;
+      justify-content: flex-end;
+      flex: 1;
+      ul{
+        border-bottom: none;
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+      }
+      li{
+        border-top: none;
+        padding: 0 21px;
+        a{
+          padding-left: 0;
+          background:linear-gradient(#101A38, #101A38);
+          background-repeat: no-repeat;
+          background-position: right bottom;
+          background-size: 0 3px;
+          transition: background-size .4s;
+          &.is-current{
+            span{
+              &::before{
+                top: -6px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__faq{
+      margin-top: 0;
+      margin-left: 20px;
+      width: 136px;
+      display: flex;
+      align-items: center;
+    }
+    &__entry{
+      margin-top: 0;
+      margin-left: 21px;
+      width: 184px;
+    }
+    &__btn {
+      display: none;
+    }
+  }
+}

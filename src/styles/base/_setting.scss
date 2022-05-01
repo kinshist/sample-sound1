@@ -1,0 +1,126 @@
+/*--------------------------------------
+  Common-Setting
+---------------------------------------*/
+
+// :root {
+//   // font-size: 62.5%;
+// }
+html {
+  font-size: 10px;
+  overflow-y: scroll; // スクロールバーの有無でガタつかないように、常にスクロールバーを表示
+  &.is-fixed {
+    overflow: hidden;
+  }
+}
+body,
+input,
+button,
+select,
+textarea {
+  font-family: $font-gothic;
+  font-weight: 500;
+}
+body {
+  min-width: 320px;
+  width: 100%;
+
+  background: #fff;
+  color: $color-prime;
+
+  font-size: 1.5rem;
+  line-height: 2;
+
+  // デバイスの向きによって文字サイズが変更されないようにする
+  -webkit-text-size-adjust: 100%;
+
+  // 出来るだけ禁則処理を保持する(英数字の単語の途中では折り返さない)
+  // word-wrapの新しい仕様がoverflow-wrap
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  // フォントのレンダリングを調整してキレイにみせる
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // 自動カーニングを有効に
+  // 参考) https://ics.media/entry/14087
+  // font-feature-settings: "palt";
+
+  &.is-fixed {
+    // position: fixed;
+    overflow: hidden;
+  }
+  @include mq(mdMin) {
+    font-size: 1.6rem;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5; // 見出し系はパラついて見えるので行間を少し狭める
+}
+img {
+  vertical-align: top; // imgで意図しないマージンがつかないように設定
+  max-width: 100%;
+  height: auto;
+}
+
+//
+// フォーム要素のデフォルトスタイルを削除する場合使用
+//
+input,
+button,
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  ::-moz-focus-inner {
+    border: none;
+  }
+}
+label {
+  cursor: pointer;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+a,
+button,
+input[type="submit"],
+input[type="button"] {
+  color: $color-prime;
+  cursor: pointer;
+  transition: 0.3s;
+}
+a:hover,
+a:active,
+button:hover {
+  color: $color-prime;
+}
+
+// 画面サイズが大きい(PC想定)の時のみホバーを適用
+@include mq(mdMin) {
+  a:hover {
+    opacity: 0.8;
+  }
+}
+
+// デフォルトのボックスモデルをボーダーボックスに変更
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}

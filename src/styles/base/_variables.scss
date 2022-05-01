@@ -1,0 +1,151 @@
+// Colors
+// --------------------------------------------------
+
+$color-prime: #000107;
+
+// orange
+$color-orange-d: #ef9c00;
+$color-orange-m: #f8b419;
+$color-orange-l: #f9aa41;
+
+// warmGray
+$color-gray-d: #666;
+$color-gray-m: #baad9c;
+$color-gray-l: #f9f8f6;
+$color-gray-l2: #e2dbd2;
+$color-gray-l3: #ded6cc;
+
+// blue
+$color-blue-d: #434d72;
+$color-blue-m: #3781be;
+$color-blue-l: #eaf0f7;
+
+// pink
+$color-pink-d: #d98282;
+$color-pink-m: #f09cab;
+$color-pink-l: #f9efef;
+
+// darkBrown
+$color-darkBrown-d: #786a5b;
+$color-darkBrown-l: #96897c;
+
+// green
+$color-green-d: #85b786;
+$color-green-m: #94cc7c;
+$color-green-l: #e4f2de;
+
+// cream
+// $color-cream-d : #ffe2ad;
+// $color-cream-l : #fff6db;
+// $color-cream-l-o : #fcedc0;
+
+// black
+$color-black-d: #333;
+
+// red
+$color-red-d: #dd3333;
+
+// yellow
+$color-yellow-d: #d5b375;
+$color-yellow-m: #fff49d;
+$color-yellow-l: #f7f2d9;
+
+$color-rainbow: linear-gradient(to right, #ffebeb, #fff4e3, #e8ffef, #ebf6ff);
+$color-rainbow2: linear-gradient(
+  to right,
+  #ffebeb 15%,
+  #fff4e3 25%,
+  #e8ffef 40%,
+  #ebf6ff 65%,
+  #ffebeb 85%,
+  #fff4e3 90%,
+  #e8ffef 95%,
+  #ebf6ff 100%
+);
+
+// Font
+// --------------------------------------------------
+
+$font-gothic: "Noto Sans JP", "Helvetica Neue", Arial,
+  "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+$font-serif: "Noto Serif JP", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+$font-gothicAlphabet: "Oswald", Helvetica, Arial, "游ゴシック体", YuGothic,
+  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo,
+  "ＭＳ Ｐゴシック", sans-serif;
+
+// Media query
+// --------------------------------------------------
+
+// breakpoint
+$xs-min: 360px;
+$sm-min: 560px;
+$md-min: 960px;
+$lg-min: 1200px;
+$lg2-min: 1600px;
+$xlg-min: 1845px;
+
+$xs-max: ($xs-min - 1); //359px
+$sm-max: ($sm-min - 1); //559px
+$md-max: ($md-min - 1); //959px
+
+$contentsWidth: 960px;
+$contentsWidth2: 1150px;
+$contentsWidth3: 1600px;
+
+// - [ sm ] 〜560px ( スマートフォン縦 スマートフォン横・小さいタブレットの縦)
+// - [ md ] 〜959px（ タブレット・ノートPCなど ）
+// - [ lg ] 960〜px（ ワイドスクリーンのPC ）
+//   - 1024px以上は余白が広がる仕様で、最大コンテンツ幅は1024px(余白なしで980px)
+
+// media query Mixin
+@mixin mq($point, $direction: min) {
+  @if $point == smMin {
+    @media print, screen and (min-width: $sm-min) {
+      @content;
+    }
+  } @else if $point == mdMin {
+    @media print, screen and (min-width: $md-min) {
+      @content;
+    }
+  } @else if $point == lgMin {
+    @media print, screen and (min-width: $lg-min) {
+      @content;
+    }
+  } @else if $point == lg2Min {
+    @media print, screen and (min-width: $lg2-min) {
+      @content;
+    }
+  } @else if $point == xlgMin {
+    @media print, screen and (min-width: $xlg-min) {
+      @content;
+    }
+  } @else if $point == xsMax {
+    @media screen and (max-width: $xs-max) {
+      @content;
+    }
+  } @else if $point == smMax {
+    @media screen and (max-width: $sm-max) {
+      @content;
+    }
+  } @else if $point == mdMax {
+    @media screen and (max-width: $md-max) {
+      @content;
+    }
+  }
+  // 変数で定義されていない値の場合
+  @else {
+    @if $direction == min {
+      @media print, screen and (min-width: $point) {
+        @content;
+      }
+    } @else if $direction == max {
+      @media screen and (max-width: $point) {
+        @content;
+      }
+    }
+  }
+}
+// example
+// @include mq(smMin) {
+//  …
+// }
